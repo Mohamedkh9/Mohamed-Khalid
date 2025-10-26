@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Master Pro - AI Powered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: radial-gradient(circle at 10% 20%, rgb(111, 111, 219) 0%, rgba(182, 182, 223, 0.2) 25%, transparent 50%),
+                          radial-gradient(circle at 80% 90%, rgb(120, 150, 232) 0%, rgba(120, 150, 232, 0.2) 25%, transparent 50%);
+        background-color: #f0f4f8;
+        z-index: -1;
+        transition: background-color 0.5s ease;
+      }
+      .dark body::before {
+        background-image: radial-gradient(circle at 10% 20%, rgb(30, 30, 100) 0%, rgba(30, 30, 100, 0.2) 25%, transparent 50%),
+                          radial-gradient(circle at 80% 90%, rgb(40, 60, 120) 0%, rgba(40, 60, 120, 0.2) 25%, transparent 50%);
+        background-color: #0c111d;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: { // Kept for legacy classes, but new components use 'brand'
+                '50': '#eff6ff',
+                '100': '#dbeafe',
+                '200': '#bfdbfe',
+                '300': '#93c5fd',
+                '400': '#60a5fa',
+                '500': '#3b82f6',
+                '600': '#2563eb',
+                '700': '#1d4ed8',
+                '800': '#1e40af',
+                '900': '#1e3a8a',
+                '950': '#172554',
+              },
+              brand: {
+                '50': '#f0f5ff',
+                '100': '#e0eaff',
+                '200': '#c7d7fe',
+                '300': '#a4bcfd',
+                '400': '#819ffc',
+                '500': '#667eea',
+                '600': '#5a67d8',
+                '700': '#4c51bf',
+                '800': '#43419b',
+                '900': '#3c3678',
+                '950': '#25214a',
+              }
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+               'shimmer': {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              },
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+              'shimmer': 'shimmer 2s infinite linear',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "jsqr": "https://aistudiocdn.com/jsqr@^1.4.0",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1",
+    "qr-code-styling": "https://aistudiocdn.com/qr-code-styling@^1.6.0-rc.1"
+  }
+}
+</script>
+</head>
+  <body class="text-slate-800 dark:text-slate-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

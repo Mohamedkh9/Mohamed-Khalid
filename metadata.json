@@ -1,0 +1,7 @@
+{
+  "name": "QR Master Pro - AI Powered QR Code Generator",
+  "description": "A comprehensive application for creating, scanning, and managing QR codes with AI-powered artistic designs and advanced functionalities.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
